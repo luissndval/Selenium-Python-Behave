@@ -1,14 +1,15 @@
 import time
-import warnings
+
+import geckodriver_autoinstaller
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import allure
 from allure_commons.types import AttachmentType
-from selenium.webdriver.firefox.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-import os
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
 
 
 class funciones_2_0:
@@ -18,15 +19,13 @@ class funciones_2_0:
     ############################################################################################
     ################################## Navegador ###############################################
     ############################################################################################
+    def driver_Firefox(self):
+        self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
-    def driver_Firefox(self):  # NAVEGADOR FIREFOX RUTA DEL DRIVE
-        self.driver = os.path.join("\\..\\drivers\\geckodriver.exe")
-        s = Service(os.path.join("\\..\\drivers\\geckodriver.exe"))
-        self.driver = webdriver.Firefox(service=s)
-        warnings.filterwarnings(action="ignore", message="unclosed", category=ResourceWarning)
+
 
     def driver_Chrome(self):
-        self.driver = webdriver.Chrome(os.path.join("\\..\\drivers\\chromedriver.exe"))
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
 
     ############################################################################################
     ################################## element_to_be_clickable##################################
