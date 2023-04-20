@@ -1,6 +1,6 @@
 import time
 
-import geckodriver_autoinstaller
+#import geckodriver_autoinstaller
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -20,7 +20,8 @@ class funciones_2_0:
     ################################## Navegador ###############################################
     ############################################################################################
     def driver_Firefox(self):
-        self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+        #self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+        print("hola mundo")
 
 
 
