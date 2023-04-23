@@ -13,8 +13,8 @@ class LoginPage(funciones_2_0):
         super().__init__(driver)
 
     def OpenBrowser(self):
-        # funciones_2_0.driver_Firefox(self)
-        funciones_2_0.driver_Chrome(self)
+        funciones_2_0.driver_Firefox(self)
+        # funciones_2_0.driver_Chrome(self)
         funciones_2_0.browser(self, Datatest.URL)
 
     def inputUserName(self, Username):

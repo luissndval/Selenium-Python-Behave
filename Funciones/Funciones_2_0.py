@@ -11,7 +11,6 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
-import os
 
 
 
@@ -23,16 +22,16 @@ class funciones_2_0:
     ################################## Navegador ###############################################
     ############################################################################################
     def driver_Firefox(self):
-        # self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-        options = Options()
-        options.headless = True
-
-        self.driver = webdriver.Firefox(options=options)
+        self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+        # options = Options()
+        # options.headless = True
+        #
+        # self.driver = webdriver.Firefox(options=options)
 
 
 
     def driver_Chrome(self):
-        self.driver = webdriver.Chrome(os.path.join("/var/lib/jenkins/workspace/Selenium-Test-Demo"))
+        self.driver = webdriver.Chrome(service=ChromeDriverManager().install())
 
     ############################################################################################
     ################################## element_to_be_clickable##################################
