@@ -26,7 +26,7 @@ class funciones_2_0:
 
 
     def driver_Chrome(self):
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome("../drivers/chromedriver")
 
     ############################################################################################
     ################################## element_to_be_clickable##################################
