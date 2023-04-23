@@ -26,7 +26,7 @@ class funciones_2_0:
 
 
     def driver_Chrome(self):
-        self.driver = webdriver.Chrome(os.path.join(r"..\\drivers\\chromedriver"))
+        self.driver = webdriver.Chrome(os.path.join("/drivers/chromedriver"))
 
     ############################################################################################
     ################################## element_to_be_clickable##################################
