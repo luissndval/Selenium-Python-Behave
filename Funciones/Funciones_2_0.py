@@ -10,7 +10,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
-from selenium.webdriver.chrome.options import Options
 
 
 class funciones_2_0:
@@ -21,10 +20,7 @@ class funciones_2_0:
     ################################## Navegador ###############################################
     ############################################################################################
     def driver_Firefox(self):
-        # self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-        firefox_options = Options()
-        firefox_options.add_argument('--headless')
-        self.driver = webdriver.Firefox(options=firefox_options)
+        self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
 
 
