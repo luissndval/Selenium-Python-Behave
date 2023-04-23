@@ -1,14 +1,17 @@
 import time
-import warnings
+
+#import geckodriver_autoinstaller
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import allure
 from allure_commons.types import AttachmentType
-from selenium.webdriver.firefox.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-import os
+from selenium.webdriver.firefox.service import Service as FirefoxService
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.firefox.options import Options
+
 
 
 
@@ -20,16 +23,19 @@ class funciones_2_0:
     ################################## Navegador ###############################################
     ############################################################################################
     def driver_Firefox(self):
-        self.driver = os.path.join("/home/epidata/Automatizaciones/geckodriver")
-        s = Service(os.path.join("/home/epidata/Automatizaciones/geckodriver"))
-        self.driver = webdriver.Firefox(service=s)
-        warnings.filterwarnings(action="ignore", message="unclosed", category=ResourceWarning)
+        self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+        # options = Options()
+        # options.headless = True
+        #
+        # self.driver = webdriver.Firefox(options=options)
 
 
 
     def driver_Chrome(self):
-        #self.driver = webdriver.Chrome(service=ChromeDriverManager().install())
-        self.driver = webdriver.Chrome(os.path.join("/home/epidata/Automatizaciones/chromedriver"))
+        options = Options()
+        options.add_argument("--headless")
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+
 
     ############################################################################################
     ################################## element_to_be_clickable##################################
