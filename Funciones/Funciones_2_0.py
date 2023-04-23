@@ -11,6 +11,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
+from pyvirtualdisplay import Display
 
 
 
@@ -32,6 +33,8 @@ class funciones_2_0:
 
 
     def driver_Chrome(self):
+        display = Display(visible=0, size=(800, 600))
+        display.start()
 
         # self.driver = webdriver.Chrome(ChromeDriverManager().install())
         chrome_options = Options()
