@@ -32,9 +32,9 @@ class funciones_2_0:
 
 
     def driver_Chrome(self):
-        options = Options()
-        options.add_argument("--headless")
-        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        # options = Options()
+        # options.add_argument("--headless")
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
 
 
     ############################################################################################
