@@ -37,8 +37,7 @@ class funciones_2_0:
         chrome_options = Options()
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--disable-gpu')
-        # self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
-        driver = webdriver.Chrome(options=chrome_options)
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
         # Inicializar el controlador de Chrome
         # driver = webdriver.Chrome('/var/lib/jenkins/workspace/Selenium-Test-Demo/drivers/chromedriver', options=chrome_options)
