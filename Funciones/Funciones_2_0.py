@@ -32,7 +32,7 @@ class funciones_2_0:
 
 
     def driver_Chrome(self):
-        self.driver = webdriver.Chrome(os.path.join("\\..\\drivers\\chromedriver"))
+        self.driver = webdriver.Chrome(os.path.join("/var/lib/jenkins/workspace/Selenium-Test-Demo"))
 
     ############################################################################################
     ################################## element_to_be_clickable##################################
