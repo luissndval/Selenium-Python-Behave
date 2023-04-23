@@ -1,5 +1,5 @@
 import time
-
+import os
 #import geckodriver_autoinstaller
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
@@ -26,7 +26,7 @@ class funciones_2_0:
 
 
     def driver_Chrome(self):
-        self.driver = webdriver.Chrome("/var/lib/jenkins/workspace/Selenium-Test-Demo/drivers/chromedriver")
+        self.driver = webdriver.Chrome(os.path.join(r"..\\drivers\\chromedriver"))
 
     ############################################################################################
     ################################## element_to_be_clickable##################################
