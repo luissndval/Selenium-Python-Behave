@@ -20,8 +20,7 @@ class funciones_2_0:
     ################################## Navegador ###############################################
     ############################################################################################
     def driver_Firefox(self):
-        #self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-        print("hola mundo")
+        self.driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
 
 
