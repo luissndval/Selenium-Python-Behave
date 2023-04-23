@@ -11,6 +11,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
+import os
 
 
 
@@ -31,7 +32,7 @@ class funciones_2_0:
 
 
     def driver_Chrome(self):
-        self.driver = webdriver.Chrome(service=ChromeDriverManager().install())
+        self.driver = webdriver.Chrome(os.path.join("\\..\\drivers\\chromedriver"))
 
     ############################################################################################
     ################################## element_to_be_clickable##################################
