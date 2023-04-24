@@ -33,15 +33,15 @@ class funciones_2_0:
 
 
     def driver_Chrome(self):
+        options = webdriver.ChromeOptions()
+        options.add_argument('--window-size=1920,1080')
+        options.add_argument("--headless")
+        options.add_argument("--start-maximized")
+        self.driver = webdriver.Chrome(ChromeDriverManager().install() , options=options)
         display = Display(visible=0, size=(800, 600))
         display.start()
 
         # self.driver = webdriver.Chrome(ChromeDriverManager().install())
-        chrome_options = Options()
-        chrome_options.add_argument('--headless')
-        chrome_options.add_argument('--disable-gpu')
-        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
-
         # Inicializar el controlador de Chrome
         # driver = webdriver.Chrome('/var/lib/jenkins/workspace/Selenium-Test-Demo/drivers/chromedriver', options=chrome_options)
 
