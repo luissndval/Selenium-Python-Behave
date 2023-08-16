@@ -17,8 +17,6 @@ Page Object Model is followed in this framework
 
 **reports** directory contains the json files generated with allure reports
 
-
-
 ### **Commands to run the tests**
 
 **To run the test with allure report**
@@ -27,4 +25,8 @@ Page Object Model is followed in this framework
 **To run the test without allure report** `behave features/login.feature`
 
 **To generate the html allure report from the json files inside reports folder**
-`allure serve reports/`
+`allure serve reports/`# GTD-Selenium
+
+
+
+Generar reporte:   allure generate reports --clean -o allure-report

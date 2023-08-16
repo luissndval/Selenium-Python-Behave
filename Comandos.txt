@@ -1,23 +1,19 @@
-Instalacion allure report https://www.skill2lead.com/allure-report/allure-report-behave-allure-report-configuration.php
+# Comando para crear el feature
+behave features
 
+# Comando para ejecutar la prueba y generar el reporte de Allure
+behave -f allure_behave.formatter:AllureFormatter -o reports/
 
-1- para crear el feature. Comando: behave features
+behave -f allure_behave.formatter:AllureFormatter -o reports/ [--tags=@declarado]
 
-2- behave -f allure_behave.formatter:AllureFormatter -o reports/  (se utiliza para ejecutar la prueba,)
+# Comando para levantar el servidor de pruebas con el reporte de Allure
+allure serve reports/
 
-3-  allure serve reports/  (levantar el servidor de pruebas.)
-
-4- tener gherkin Instalado
-
-Plugins a instalar:all
-
+# Instalar los plugins requeridos (agregar cualquier otro si es necesario)
 pip install -r requirements.txt
 
-Correr un unico feature por comando bahave features\NombreFeature
+# Convertir el reporte de Allure en formato HTML
+allure generate reports/ -c -o reports/html/
 
-Crear requirements
-
-pip freeze > requirements.txt
-
-# cd /C/Users/Asinf/Desktop/AutomatizacionTurnera/RepoGitLab/turnera-backend-administracion/TestAutomation/
-
+#Instalar Requirements
+python install_requirements.py
